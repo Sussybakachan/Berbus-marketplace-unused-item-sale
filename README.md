@@ -4,7 +4,7 @@ Webapplication for selling unused and not needed items to partner companies of t
 
 ## What is the goal of the project?
 - Having unused and not needed items in the company doesn't provide any value
-- Providing partner comapanies with needed items will help both the partner as well as Berbus-marketplace
+- providing partner companies with needed items will help both the partner as well as Berbus-marketplace
 - selling those items to partner companies will provide following advantages:
     - avoiding overfilled physical storage space
     - making some profit
