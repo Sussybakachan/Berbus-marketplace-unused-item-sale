@@ -1,6 +1,9 @@
 package com.berbus;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "product")
@@ -29,9 +32,13 @@ public class Product {
 
     private String sellerEmail;
 
-    private String category;
-
     private String account;
 
     private int accountQueue;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "categoryId", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private Category category;
 }
