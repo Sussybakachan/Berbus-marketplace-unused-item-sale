@@ -6,9 +6,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class CategoryServiceImpl implements CategoryService {
 
-    @Autowired
-    private CategoryRepo categoryRepo;
-
     @Override
     public void createCategory(Category category) {
 

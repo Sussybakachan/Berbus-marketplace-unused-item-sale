@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Configuration
+@Component
 public interface ProductService {
 
     void createProduct(Product product);
@@ -16,5 +16,6 @@ public interface ProductService {
 
     void deleteProduct(Long id);
 
-    List<Product> getProductsByCategory(String category);
+    List<Product> getProductsByCategoryName(String categoryName);
+
 }
