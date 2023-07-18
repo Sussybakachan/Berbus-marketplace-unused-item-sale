@@ -50,7 +50,6 @@ public class Product {
         this.account = account;
         this.accountQueue = accountQueue;
         this.category = category;
-        this.categoryName = categoryName;
     }
 
     public Product() {
@@ -161,20 +160,11 @@ public class Product {
         this.category = category;
     }
 
-    public String getCategoryName() {
-        return categoryName;
-    }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "categoryId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Category category;
 
-
-    @Column(name = "categoryName", insertable = false, updatable = false)
-    private String categoryName;
 }
