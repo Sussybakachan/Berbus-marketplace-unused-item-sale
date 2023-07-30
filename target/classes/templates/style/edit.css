@@ -1,0 +1,174 @@
+
+
+body {
+    font-family: 'Metropolis', sans-serif !important;
+    font-weight: 100 !important;
+    font-size: 14px !important;
+    margin: 0px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.headertop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.logo{
+    margin: 20px;
+   
+}
+.signin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notifications {
+    margin: 8px;
+}
+.useremail{
+    margin: 8px;
+}
+.logout{
+    margin: 8px;
+}
+.notbutton {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    width: auto;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.product img {
+    max-width: 100px;
+    margin-right: 10px;
+}
+
+.product-actions {
+    display: flex;
+}
+
+.product-actions button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.add-product {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.add-product button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.header {
+    background-color: #999999;
+    height: 52px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.header input {
+    background-color: white;
+    padding: 7px 3px 7px 4px;
+    border: none;
+    box-sizing: border-box;
+    min-height: 32px;
+    border-radius: 10px;
+} 
+
+.button {
+    padding: 7px 3px 7px 4px;
+    border: none;
+    box-sizing: border-box;
+    min-height: 32px;
+    border-radius: 10px;
+    width: 60px;
+    margin-left: 8px;
+    margin-right: 10px;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown {
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: black;
+    cursor: pointer;
+    padding: 7px 3px 7px 4px;
+    border: none;
+    box-sizing: border-box;
+    min-height: 32px;
+    border-radius: 10px;
+    width: auto;
+    margin-left: 8px;
+    margin-right: 10px;
+    font-size: 13.3px;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+}
+
+.dropdown-content li {
+    padding: 0;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
