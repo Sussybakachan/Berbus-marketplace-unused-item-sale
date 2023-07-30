@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MARKETPLACE</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style/shop.css}" />
+    <link rel="icon" th:href="@{/img/favicon.png}">
+</head>
+
+<body>
+    <div class="container">
+        <form th:action="@{/products/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
+            <div th:replace="fragments :: Header" class="headertop" />
+            <div class="upload">
+                <div class="row">
+                    <div class="uploadGroup">
+                        <label class="uploadGroup-label" for="TitleInput">Titel</label>
+                        <div class="uploadGroup-input">
+                            <input type="text" id="TitleInput" th:field="*{titel}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="uploadGroup">
+                        <label class="uploadGroup-label" for="category">Kategorie</label>
+                        <div class="uploadGroup-input">
+                            <select id="categorie" name="Kategorie" th:field="*{category}">
+                                <option th:each="Category : ${categoryList}" th:text="${Category.categoryName}" th:value="${Category.categoryId}" />
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="uploadGroup">
+                        <label class="uploadGroup-label">Preis</label>
+                        <div class="uploadGroup-input">
+                            <label for="grossPriceInput">Bruttopreis: </label>
+                            <input id="grossPriceInput" th:field="*{grossPrice}"> EUR
+                            <br>
+                            <label for="netPriceInput">Nettopreis: </label>
+                            <input id="netPriceInput" th:field="*{netPrice}"> EUR
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="uploadGroup">
+                        <label class="uploadGroup-label" for="descriptionInput">Beschreibung</label>
+                        <div class="uploadGroup-input">
+                            <textarea id="descriptionInput" th:field="*{description}"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="uploadGroup">
+                        <label class="uploadGroup-label" for="product-image">Bilder</label>
+                        <div class="uploadGroup-input">
+                            <input type="file" id="product-image" name="product_image" accept="image/*" th:required="required">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="uploadGroup">
+                        <label class="uploadGroup-label" for="sellerEmailInput">Kontaktdaten(E-Mail)</label>
+                        <div class="uploadGroup-input">
+                            <input id="sellerEmailInput" th:field="*{sellerEmail}">
+                        </div>
+                    </div>
+                </div>
+            <button type="submit">Erstellen</button>
+        </form>
+    </div>
+</body>
+
+</html>

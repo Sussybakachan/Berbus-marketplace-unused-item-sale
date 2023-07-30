@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+</head>
+
+<body>
+    <div th:fragment="Header" class="headertop">
+        <div class="logo">
+            <a th:href="@{/}"><img th:src="@{/img/2023-BERBUS_MARKETPLACE_LOGO_WORTMARKE.png}"></a>
+        </div>
+        <div class="signin">
+            <div class="useremail" th:text="'angemeldet als ' + ${AccountName}" /> 
+            <div class="logout"> <a th:href="@{/logout}">ausloggen</a></div>
+            <div class="notifications">
+                <button class="notbutton"><img th:src="@{/img/glocke.png}" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
