@@ -13,7 +13,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void createCategory(Category category) {
-
+        this.categoryRepo.save(category);
     }
 
     @Override
@@ -32,8 +32,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void deleteCategory(Long id) {
-
+    public void deleteCategory(int id) {
+        this.categoryRepo.deleteById((long) id);
     }
 
     @Override

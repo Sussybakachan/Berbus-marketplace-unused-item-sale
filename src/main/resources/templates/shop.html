@@ -5,28 +5,18 @@
     <meta charset="UTF-8">
     <title>MARKETPLACE</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style/shop.css}" />
-    <link rel="icon" href="./img/favicon.png">
+    <link rel="icon" th:href="@{/img/favicon.png}">
 </head>
 
 <body>
     <div class="container">
         <form>
-            <div class="headertop">
-                <div class="logo">
-                    <img src="./img/2023-BERBUS_MARKETPLACE_LOGO_WORTMARKE.png">
-                </div>
-                <div class="signin">
-                    <div class="useremail" th:text="'angemeldet als '" />
-                    <div class="logout">ausloggen</div>
-                    <div class="notifications">
-                        <button class="notbutton"><img src="./img/glocke.png" />
-                    </div>
-                </div>
-            </div>
+            <div th:replace="fragments :: Header" class="headertop"/>
             <div class="header">
                 <div class="searchbar">
-                    <input type="text" title placeholder="Was suchst du?">
-                    <button class="button" value="suchen" />
+                    <input type="text" placeholder="Was suchst du?">
+                    <button class="button">suchen</button>
+                    <a th:href="@{/products/all}">Alle Artikel bearbeiten</a>
                 </div>
             </div>
             <div class="categories">
@@ -38,14 +28,14 @@
             <div class="showArticles">
                 <ul class="item-list">
                     <li class="item" th:each="Product : ${ProductList}">
-                        <a th:href="@{/product/{id}(id=${Product.id})}">
+                        <a th:href="@{/products/showProduct/{id}(id=${Product.id})}">
                             <div class="item-header">
                                 <img src="./img/favicon.png">
                             </div>
                             <div class="item-body">
                                 <h3 class="item-title" th:text="${Product.titel}" />
                             </div>
-                            <div class="item-price" th:text="${Product.grossPrice}" />
+                            <div class="item-price" th:text="${Product.grossPrice}+' €'" />
                         </a>
                     </li>
                 </ul>

@@ -160,8 +160,6 @@ public class Product {
         this.category = category;
     }
 
-
-
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "categoryId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)

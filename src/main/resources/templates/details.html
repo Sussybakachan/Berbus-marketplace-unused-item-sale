@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Produkt Detailansicht</title>
+    <link rel="stylesheet" th:href="@{/style/details.css}">
+    <link rel="icon" th:href="@{/img/favicon.png}">
+</head>
+
+<body>
+    <div th:replace="fragments :: Header" class="headertop"/>
+    <div class="container">
+        <form>
+            <div class="product-details" th:object="${product}">
+                <img th:src="@{/img/favicon.png}" alt="Produktbild">
+                <h1 class="Informations" th:text="${product.titel}" id="title"/>
+                <p class="Informations" th:text="'Bruttopreis: ' + ${product.grossPrice} + ' €'" id="grossprice"/>
+                <p class="Informations" th:text="'Nettopreis: ' + ${product.netPrice} + ' €'" id="netprice"/>
+                <p class="Informations" th:text="${product.description}" id="description">
+                <p class="Informations" th:if="${product.isReserved}" th:text="'Das Produkt ist reserviert.'" id="status"/>
+                <p class="Informations" th:unless="${product.isReserved}" th:text="'Das Produkt ist nicht reserviert.'" id="status"/>
+                <p class="Informations" th:text="'Anzahl: ' + ${product.amount}" id="amount"/>
+                <p class="Informations" th:text="'Verkäufer: ' + ${product.sellerEmail}" id="Kontaktdaten"/>
+                <button class="contact">Verkäufer Kontaktieren</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,7 +1,6 @@
 package com.berbus;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +15,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void createProduct(Product product) {
         this.productRepo.save(product);
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        return this.productRepo.findAll();
     }
 
     @Override
