@@ -1,6 +1,8 @@
-package com.berbus;
+package com.berbus.Service;
 
 import java.util.List;
+
+import com.berbus.Model.Category;
 
 public interface CategoryService {
 

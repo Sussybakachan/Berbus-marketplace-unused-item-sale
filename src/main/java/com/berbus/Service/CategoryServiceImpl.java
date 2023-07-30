@@ -1,9 +1,12 @@
-package com.berbus;
+package com.berbus.Service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.berbus.Model.Category;
+import com.berbus.Repository.CategoryRepo;
 
 @Component
 public class CategoryServiceImpl implements CategoryService {

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MainApplication<Berbus-marketplace-unused-item-sale>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.berbus.MainApplication",
+            "projectName": "Berbus-marketplace-unused-item-sale",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

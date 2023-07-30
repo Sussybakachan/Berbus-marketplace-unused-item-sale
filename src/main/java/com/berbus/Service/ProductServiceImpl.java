@@ -1,8 +1,18 @@
-package com.berbus;
+package com.berbus.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.berbus.Model.Product;
+import com.berbus.Repository.ProductRepo;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,6 +53,21 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getProductsByCategoryName(String categoryName) {
         return productRepo.findByCategoryCategoryName(categoryName);
+    }
+
+    @Override
+    public void uploadFile(MultipartFile imageFile, String fileName, String uploadDirectory) throws IOException {
+        Path uploadPath = Paths.get(uploadDirectory);
+
+        if (!Files.exists(uploadPath)) {
+            Files.createDirectories(uploadPath);
+        }
+        try (InputStream inputStream = imageFile.getInputStream()) {
+            Path filePath = uploadPath.resolve(fileName);
+            Files.copy(inputStream, filePath);
+        } catch (IOException ioe) {
+            throw new IOException("Bild konnte nicht gespeichert werden. ");
+        }
     }
 
 }

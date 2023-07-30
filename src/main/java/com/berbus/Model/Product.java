@@ -1,6 +1,5 @@
-package com.berbus;
+package com.berbus.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -10,7 +9,7 @@ import org.hibernate.annotations.OnDeleteAction;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String titel;
@@ -21,7 +20,7 @@ public class Product {
 
     private boolean isPrivate;
 
-//TODO configure the prices to only have 2 decimal places (Nachkommastellen)
+    // TODO configure the prices to only have 2 decimal places (Nachkommastellen)
     private double grossPrice;
 
     private double netPrice;
@@ -36,7 +35,9 @@ public class Product {
 
     private int accountQueue;
 
-    public Product(Integer id, String titel, String description, boolean isReserved, boolean isPrivate, double grossPrice, double netPrice, double originalPrice, int amount, String sellerEmail, String account, int accountQueue, Category category, String categoryName) {
+    private String Image;
+
+    public Product(Integer id, String titel, String description, boolean isReserved, boolean isPrivate, double grossPrice, double netPrice, double originalPrice, int amount, String sellerEmail, String account, int accountQueue, String Image, Category category) {
         this.id = id;
         this.titel = titel;
         this.description = description;
@@ -49,7 +50,40 @@ public class Product {
         this.sellerEmail = sellerEmail;
         this.account = account;
         this.accountQueue = accountQueue;
+        this.Image = Image;
         this.category = category;
+    }
+
+    public boolean isIsReserved() {
+        return this.isReserved;
+    }
+
+    public boolean getIsReserved() {
+        return this.isReserved;
+    }
+
+    public void setIsReserved(boolean isReserved) {
+        this.isReserved = isReserved;
+    }
+
+    public boolean isIsPrivate() {
+        return this.isPrivate;
+    }
+
+    public boolean getIsPrivate() {
+        return this.isPrivate;
+    }
+
+    public void setIsPrivate(boolean isPrivate) {
+        this.isPrivate = isPrivate;
+    }
+
+    public String getImage() {
+        return this.Image;
+    }
+
+    public void setImage(String Image) {
+        this.Image = Image;
     }
 
     public Product() {

@@ -1,4 +1,4 @@
-package com.berbus;
+package com.berbus.Model;
 
 import jakarta.persistence.*;
 

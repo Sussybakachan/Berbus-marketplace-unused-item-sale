@@ -1,8 +1,11 @@
-package com.berbus;
+package com.berbus.Service;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.berbus.Model.Product;
+
+import java.io.IOException;
 import java.util.List;
 
 @Component
@@ -17,4 +20,6 @@ public interface ProductService {
     List<Product> getProductsByCategoryName(String categoryName);
 
     List<Product> getAllProducts();
+    
+    void uploadFile(MultipartFile imageFile, String fileName, String uploadDirectory) throws IOException;
 }
