@@ -1,198 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARKETPLACE</title>
-    <link rel="stylesheet" href="./style/shop.css">
-    <link rel="icon" href="./Img/favicon.png">
+    <link rel="stylesheet" href="./style/edit.css">
+    <link rel="icon" th:href="@{/img/favicon.png}">
 </head>
 
+
 <body>
-    <div class="container">
+    <div class="all">
         <form>
-            <div class="headertop">
-                <div class="logo">
-                    <img src="./img/2023-BERBUS_MARKETPLACE_LOGO_WORTMARKE.png">
-                </div>
-                <div class="signin">
-                    <div class="useremail">angemeldet als: jose.goette@tecit.de</div>
-                    <div class="logout">ausloggen</div>
-                    <div class="notifications">
-                        <button class="notbutton"><img src="./img/glocke.png"> </button>
-                    </div>
-                </div>
-            </div>
             <div class="header">
-                <div class="searchbar">
-                    <input type="text" title placeholder="Was suchst du?">
-                    <div class="categories">
+                <div class="header">
+                    <div class="searchbar">
+                        <input type="text" placeholder="Was suchst du?">
                         <ul class="dropdown">
                             <li class="dropbtn">Kategorie</li>
                             <ul class="dropdown-content">
-                                <li><a href="#">Laptop </a></li>
-                                <li><a href="#">Telefone</a></li>
-                                <li><a href="#">Sonstiges</a></li>   
+                                <li th:each="Category : ${categoryList}" th:text="${Category.categoryName}" />
                             </ul>
                         </ul>
+                        <button class="button">suchen</button>
+                        <a th:href="@{/products/all}">Alle Artikel bearbeiten</a>
                     </div>
-                    <button class="button"> suchen </button>
                 </div>
             </div>
-            <div class="showArticles">
-                <ul class="item-list">
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/favicon.png">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/2023-BERBUS_MARKETPLACE_LOGO_WORTMARKE.png">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/230517_tecit_facebook_1200x1200px.jpg">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/test.jpg">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/2023-BERBUS_MARKETPLACE_LOGO_WORTMARKE.png">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/favicon.png">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/2023-BERBUS_MARKETPLACE_LOGO_WORTMARKE.png">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/230517_tecit_facebook_1200x1200px.jpg">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/test.jpg">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <div class="item-header">
-                                <img src="./img/2023-BERBUS_MARKETPLACE_LOGO_WORTMARKE.png">
-                            </div>
-                            <div class="item-body">
-                                <h3 class="item-title">
-                                    Tec:IT werbeplakat
-                                </h3>
-                            </div>
-                            <div class="item-price">
-                                115€
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+            <div class="container">
+                <div class="product-grid">
+                    <div class="product-item" th:each="Product : ${ProductList}">
+                        <div class="image">
+                            <img th:src="@{'/img/productImages/'+${Product.Image}}">
+                        </div>
+                            <h2 th:text="${Product.titel}"></h2>
+                            <p class="price" th:text="${Product.grossPrice}+' €'"></p>
+                            <a th:href="@{/products/showProduct/{id}(id=${Product.id})}" class="more-info">Mehr Info</a>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

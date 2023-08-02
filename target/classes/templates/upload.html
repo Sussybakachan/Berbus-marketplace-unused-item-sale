@@ -1,81 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>Marketplace</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARKETPLACE - Produkt hochladen</title>
+    <link rel="stylesheet" href="./style/upload.css">
+    <link rel="icon" href="./Img/favicon.png">
 </head>
 <body>
-<div class="container">
-    <form>
-        <div class="upload">
-            <div class="row">
-                <div class="uploadGroup">
-                    <label class="uploadGroup-label">
-                        Titel 
-                    </label>
-                    <div class="uploadGroup-input">
-                        <input>
-                    </div>
-                </div>
+    <div class="headertop">
+        <div class="logo">
+            <img src="./img/2023-BERBUS_MARKETPLACE_LOGO_WORTMARKE.png">
+        </div>
+        <div class="signin">
+            <div class="useremail">angemeldet als: jose.goette@tecit.de</div>
+            <div class="logout">ausloggen</div>
+            <div class="notifications">
+                <button class="notbutton"><img src="./img/glocke.png"> </button>
             </div>
-            <div class="row">
-                <div class="uploadGroup">
-                    <label class="uploadGroup-label">
-                        Kategorie 
-                    </label>
-                    <div class="uploadGroup-input">
-                        <select id="categorie" name="Kategorie">
-                            <option value="Laptop">Laptop</option>
-                            <option value="Telefon">Telefon</option>
-                            <option value="Sontiges">Sontiges</option>
-                        </select>
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="searchbar">
+            <input type="text" title placeholder="Was suchst du?">
+            <div class="categories">
+                <ul class="dropdown">
+                    <li class="dropbtn">Kategorie</li>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Laptop </a></li>
+                        <li><a href="#">Telefone</a></li>
+                        <li><a href="#">Sonstiges</a></li>   
+                    </ul>
+                </ul>
             </div>
-            <div class="row">
-                <div class="uploadGroup">
-                    <label class="uploadGroup-label">
-                        Preis 
-                    </label>
-                    <div class="uploadGroup-input">
-                        <label>Brutto</label>
-                        <input> EUR 
-                        <br>
-                        <label>Netto</label>
-                        <input> EUR
-                    </div>
-                </div>
+            <button class="button"> suchen </button>
+        </div>
+    </div>
+    <div class="container">
+        <form>
+            <div class="upload">
+                <label for="product_name">Produktname:</label>
+                <input class="input" type="text" id="product_name" name="product_name" required>
+                <br>
+                <label for="product_name">Kategorie:</label>
+                <select id="categorie" name="Kategorie">
+                    <option value="Laptop">Laptop</option>
+                    <option value="Telefon">Telefon</option>
+                    <option value="Sontiges">Sontiges</option>
+                </select>
+                <br>
+                <label for="product_price">Brutto Preis:</label>
+                <input class="input" type="text" id="product_price" name="product_price" required>
+                <br>
+                <label for="product_price">Netto Preis:</label>
+                <input class="input" type="text" id="product_price" name="product_price" required>
+                <br>
+                <label for="product_description">Beschreibung:</label>
+                <input class="input" type="text" id="product_description" name="product_description" required>
+                <br>
+                <label for="product_image">Bild hochladen:</label>
+                <input class="input" type="file" id="product_image" name="product_image" accept="image/*" required>
+                <br>
+                <label for="product_price">Preis:</label>
+                <input class="input" type="text" id="product_price" name="product_price" required>
+                <br>
+                <input class="input" type="submit" value="Produkt hochladen">
             </div>
-            <div class="row">
-                <div class="uploadGroup">
-                    <label class="uploadGroup-label">
-                        Beschreibung 
-                    </label>
-                    <div class="uploadGroup-input">
-                        <textarea></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="uploadGroup">
-                    <label class="uploadGroup-label">
-                        Bilder  
-                    </label>
-                    <div class="uploadGroup-input">
-                        <input type="file" id="product-image" name="product_image" accept="image/*" required>
-                        <button type="submit">Hochladen</button>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="uploadGroup">
-                    <label class="uploadGroup-label">
-                        Kontaktdaten(E-Mail)  
-                    </label>
-                    <div class="uploadGroup-input">
-                        <input>
-        </div>  
-    </form>
-</div>
+        </form>
+    </div>
 </body>
+
 </html>
